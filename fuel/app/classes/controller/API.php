@@ -28,13 +28,18 @@ class Controller_API extends Controller_Rest {
 //                'id', '=', $storyId,
 //            ),
 //        ));
+        $story = Model_Story::find($storyId);
+        $value = $story['number_view'];
+        $story->set(array(
+            'number_view' => $value  + 1,
+        ));                
+        $story->save();
 
         $entry = Model_Chap::find('all', array(
             'where' => array(
                 array('story_id' => $storyId)
             ),
         ));        
-     
         return $this->response($this->successData($entry));
     }
     

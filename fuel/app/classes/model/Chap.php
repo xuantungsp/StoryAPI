@@ -28,12 +28,12 @@ class Model_Chap extends \Orm\Model {
             'validation' => array('required'),
         ),
         
-        'create_at' => array(
+        'created_at' => array(
              'data_type' => 'timestamp',
             'label' => 'Create at',
         ),
         
-            'update_at' => array(
+        'updated_at' => array(
              'data_type' => 'timestamp',
             'label' => 'Update at',
         )

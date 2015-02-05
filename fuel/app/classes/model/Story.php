@@ -19,23 +19,28 @@ class Model_Story extends \Orm\Model {
             'validation' => array('required'),
         ),
         
+        'image' => array(
+            'date_type' => 'text',
+            'label' => 'image', 
+        ),
+        
         'number_view' => array(
             'data_type' => 'int',
             'label' => 'Number Views',
             'default' => 0,
         ),
         
-        'create_at' => array(
+        'created_at' => array(
             'data_type' => 'timestamp',
             'label' => 'Create at',
         ),
         
-        'update_at' => array(
+        'updated_at' => array(
             'data_type' => 'timestamp',
             'label' => 'Update at',
         )
     );
     
     
-    public $title;
+    public $title, $image, $number_view;
 }
