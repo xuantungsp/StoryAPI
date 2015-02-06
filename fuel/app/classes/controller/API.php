@@ -29,7 +29,7 @@ class Controller_API extends Controller_Rest {
 //            ),
 //        ));
         $story = Model_Story::find($storyId);
-        $value = $story['number_view'];
+        $value = !empty($story['number_view']) ?  $story['number_view'] : 0;
         $story->set(array(
             'number_view' => $value  + 1,
         ));                
