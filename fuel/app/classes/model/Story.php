@@ -43,4 +43,11 @@ class Model_Story extends \Orm\Model {
     
     
     public $title, $image, $number_view;
+    
+        public static function validate($factory)
+	{
+            $val = Validation::forge($factory);
+            $val->add_field('title', 'Title', 'required|max_length[255]');
+            return $val;
+	}
 }
